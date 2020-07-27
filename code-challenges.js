@@ -14,12 +14,13 @@ var collections = ["purple", "blue", "green", "yellow", "pink"]
 const randomMinusOne = (arr) => {
 
     // Since the expected outcome of this function is to actually modify the original array so this function can run multiple times. I was able to refactor this same solution to not modify the original array as well, but since I want to I will go ahead and initialize a new array that is going to take all of the elements directly out of the original one. 
-
     let newArr = arr.splice(0)
 
     // // Now I'll set up a shift method to get rid of that first element
 
     newArr.shift()
+
+    if (newArr.length == 0) {return "The array is empty"}
 
     // // I can use while loop to iterate through our local version of the original array, splicing a random element into the original array until the local array is empty
     while (newArr.length > 0) {
@@ -35,6 +36,9 @@ const randomMinusOne = (arr) => {
 }
 
 
+console.log(randomMinusOne(collections))
+console.log(randomMinusOne(collections))
+console.log(randomMinusOne(collections))
 console.log(randomMinusOne(collections))
 console.log(randomMinusOne(collections))
 
