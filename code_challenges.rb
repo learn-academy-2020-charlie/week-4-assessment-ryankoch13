@@ -20,21 +20,21 @@ puts only_odds fullArr2
 # --------------------2) Create a class called Bike that is initialized with a model, wheels, and a frame size. The default number of wheels is 2. Create a get_info method that returns a sentence with all the data from the bike object.
 
 class Bike
-    def initialize 
-        @model = 'City'
-        @wheels = 4
-        @frame = 'Medium'
+    def initialize (model, frame, wheels = 2)
+        @model = model
+        @wheels = wheels
+        @frame = frame
         @bell = 'Ahooooooooga!'
         @spedometer = 0
     end
     def get_info
-        puts "This is a #{@model} bike with #{@wheels} wheels and a #{@frame} sized frame."
+        "This is a #{@model} bike with #{@wheels} wheels and a #{@frame} sized frame."
     end
     def ring_bell
-        puts @bell
+        @bell
     end
     def speed
-        puts @spedometer
+        @spedometer
     end
     def speed_up amount
         @spedometer = @spedometer + amount
@@ -47,8 +47,8 @@ class Bike
     end
 end
 
-my_bike = Bike.new
-my_bike.get_info
+my_bike = Bike.new("City", "Medium")
+puts my_bike.get_info
 
 
 # Expected output example: 'The Trek bike has 2 wheels and a 168cm frame.'
@@ -57,7 +57,7 @@ my_bike.get_info
 # -------------------3) Add a bell to the bike class and create a method that will ring the bell when the method is called.
 
 
-my_bike.ring_bell
+puts my_bike.ring_bell
 
 
 # Expected output example: my_bike.ring_bell => 'Beep beep!'
@@ -66,7 +66,7 @@ my_bike.ring_bell
 # -------------------4) Add a speedometer to the Bike class. The speed should be initialized at 0.
 
 
-my_bike.speed
+puts my_bike.speed
 
 
 # Expected output example: my_bike.speed => 0
