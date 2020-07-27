@@ -9,12 +9,13 @@ fullArr2 = ['hello', 7, 23, -823, false, 78, nil, '67', 6, 'Number']
 
 # I'll go ahead and define my function with a parameter of an array
 def only_odds array
-    nums = array.select { |v| v.respond_to?(:to_int) }
+    nums = array.select { |v| v.respond_to?(:to_int) && v % 2 != 0 }
     nums.sort { |a, b| a <=> b }
 end
 
 
 puts only_odds fullArr1
+puts only_odds fullArr2
 
 # --------------------2) Create a class called Bike that is initialized with a model, wheels, and a frame size. The default number of wheels is 2. Create a get_info method that returns a sentence with all the data from the bike object.
 
